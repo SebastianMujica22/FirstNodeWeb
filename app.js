@@ -48,10 +48,8 @@ axios.get(url)
         readHtml( res => {
             let x = res.replace("replace", nuevoTexto)
             sendData(servidor => {
-                fs.readFile("app.js", (err, data) => {
                     servidor.write(x); //leer el archivo html y enviarlo
                     servidor.end()
-                })
                 }
             )
         })
